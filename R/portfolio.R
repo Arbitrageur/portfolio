@@ -314,6 +314,8 @@ setMethod("+",
             r@symbol.var <- r.basic@symbol.var
             r@ret.var <- r.basic@ret.var
 
+            r@price.var <- e1@price.var
+            
             if(nrow(e1@shares) == 0 && nrow(e2@shares) == 0){
               return(r)
             }
