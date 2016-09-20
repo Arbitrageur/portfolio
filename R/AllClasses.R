@@ -156,7 +156,7 @@ setClass("portfolio",
            equity       = numeric(0),
            weight.style = "sides.separate",
            file         = "none",
-           price.var    = "price.usd",
+           price.var    = "price",
            
            shares = data.frame(id = I(character(0)), shares = numeric(0))
            ),
