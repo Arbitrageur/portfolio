@@ -15,14 +15,20 @@ setMethod("initialize",
           signature(.Object = "portfolioBasic"),
           function(.Object, ...){
 
+            inputs <- list(...)
+            for (s in names(inputs)) {
+              if (s %in% slotNames(.Object)) {
+                slot(.Object, s) <- inputs[[s]]
+              }
+            }
+            # browser()
             if(nrow(.Object@data) == 0){
               row.names(.Object@data) <- integer(0)
             }
             if(nrow(.Object@weights) == 0){
-              row.names(.Object@data) <- integer(0)
+              row.names(.Object@weights) <- integer(0)
             }
             
-            .Object <- callNextMethod()
             create(.Object)
           }
           )
